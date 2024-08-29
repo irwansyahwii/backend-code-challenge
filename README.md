@@ -189,5 +189,5 @@ https://localhost/swagger
 
 1. Login using email: `irwansyah@gmail.com` and password: `Abcd1234!`
 1. Retrieve the token
-1. Click the `Authorize` button on Swagger and enter `Bearer <TOKEN>`. Where `<TOKEN> is the token you get from Login
+1. Click the `Authorize` button on Swagger and enter `Bearer <TOKEN>`. Where `<TOKEN>` is the token you get from Login
 1. Choose and call an API
