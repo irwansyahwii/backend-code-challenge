@@ -157,15 +157,7 @@ dotnet dev-certs https -ep %USERPROFILE%\.aspnet\https\aspnetapp.pfx -p password
 dotnet dev-certs https --trust
 ```
 
-3. Run the tests:
-
-```
-make test
-```
-
-You must have dotnet sdk installed in your system since the tests is not running inside a Docker container.
-
-4. Run
+3. Run
 
 ```
 make
@@ -174,6 +166,16 @@ make
 Wait until the startup finished. The system will try to execute the database migrations and seeder. Wait until you see message `Hosting started` in Docker Desktop.
 
 Read the `View Swagger` section to know how to call the API.
+
+4. Run the tests:
+
+```
+make test
+```
+
+You must have dotnet sdk installed in your system since the tests is not running inside a Docker container.
+
+
 
 ## View Swagger
 
