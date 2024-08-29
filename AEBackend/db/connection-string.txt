@@ -1,0 +1,1 @@
+User ID =postgres;Password=010679;Server=app_db;Port=5432;Database=SampleDriverDb; Integrated Security=true;Pooling=true;
