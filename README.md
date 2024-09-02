@@ -173,7 +173,7 @@ You must have dotnet sdk installed in your system since the tests is not running
 Make sure you have followed the steps on `How to Run` properly. Open
 
 ```
-https://localhost/swagger
+https://localhost:5002
 ```
 
 1. Retrieve login token to call API through Swagger
