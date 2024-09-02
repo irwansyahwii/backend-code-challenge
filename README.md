@@ -140,7 +140,7 @@ Server=127.0.0.1;Port=5432;Userid=postgres;Password=010679;Pooling=false;MinPool
 
 You have to change the `Server`, `Port`, `Userid`, and `Password` based on your database setup. 
 
-You can use the pre-configured `postgres` in `compose.yaml` by running:
+You can use the pre-configured `postgres` database server in `compose.yaml` by running:
 
 ```
 docker compose up db -d
