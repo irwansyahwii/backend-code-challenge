@@ -158,10 +158,10 @@ You can also change the listening port by changing the configuration in `appsett
 
 Read the `View Swagger` section to know how to call the API.
   
-3. Run the tests:
+3. Run the tests, change directory to `AEBackend.Tests` then run:
 
 ```
-make test
+dotnet test
 ```
 
 You must have dotnet sdk installed in your system since the tests is not running inside a Docker container but you still need `Docker` since the database is setup to run inside a TestContainer.
