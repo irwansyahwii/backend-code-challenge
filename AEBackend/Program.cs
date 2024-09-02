@@ -124,7 +124,9 @@ public class Program
                         var descriptions = app.DescribeApiVersions();
                         foreach (var description in descriptions)
                         {
+                            // options.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API v1");
                             options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                            options.RoutePrefix = string.Empty;
                         }
                     });
 
@@ -236,7 +238,7 @@ public class Program
             app.UseExceptionHandler("/error");
         }
 
-        app.UseHttpsRedirection();
+        // app.UseHttpsRedirection();
         app.UseAuthorization();
 
         app.MapControllers();

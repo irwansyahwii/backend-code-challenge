@@ -133,47 +133,38 @@ Should you have any questions, feel free to send us an e-mail.
 
 ## How to Run
 
-1. Create `db/password.txt`. Fill in with any password, let say:
-
+1. Setup the connection string in `AEBackend\appsettings.json`. Currently it is set to:
 ```
-Abcd1234
-```
-
-This password will be used for the `db` service on `compose.yaml`.
-
-2. Setup the HTTP first:
-
-- Mac OS
-
-```
-dotnet dev-certs https -ep ${HOME}/.aspnet/https/aspnetapp.pfx -p password
-dotnet dev-certs https --trust
+Server=127.0.0.1;Port=5432;Userid=postgres;Password=010679;Pooling=false;MinPoolSize=1;MaxPoolSize=20;Timeout=15;
 ```
 
-- Windows using Linux containers (NOTE: Not tested, yet)
+You have to change the `Server`, `Port`, `Userid`, and `Password` based on your database setup. 
+
+You can use the pre-configured `postgres` in `compose.yaml` by running:
 
 ```
-dotnet dev-certs https -ep %USERPROFILE%\.aspnet\https\aspnetapp.pfx -p password
-dotnet dev-certs https --trust
+docker compose up db -d
+```
+2. From command line, change directory to `AEBackend` folder. Run:
+```
+dotnet run
 ```
 
-3. Run
+Wait until you see message `Hosting started`. The system will try to execute the database migrations and seeder.
 
-```
-make
-```
+The API service and Swagger will be listening on [`http://localhost:5002`](http://localhost:5002). 
 
-Wait until the startup finished. The system will try to execute the database migrations and seeder. Wait until you see message `Hosting started` in Docker Desktop.
+You can also change the listening port by changing the configuration in `appsettings.json`.
 
 Read the `View Swagger` section to know how to call the API.
-
-4. Run the tests:
+  
+3. Run the tests:
 
 ```
 make test
 ```
 
-You must have dotnet sdk installed in your system since the tests is not running inside a Docker container.
+You must have dotnet sdk installed in your system since the tests is not running inside a Docker container but you still need `Docker` since the database is setup to run inside a TestContainer.
 
 
 
@@ -191,3 +182,5 @@ https://localhost/swagger
 1. Retrieve the token
 1. Click the `Authorize` button on Swagger and enter `Bearer <TOKEN>`. Where `<TOKEN>` is the token you get from Login
 1. Choose and call an API
+
+If you got `401` that means you forgot to add `Bearer` prefix in front of your token.
