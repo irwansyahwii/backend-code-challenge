@@ -157,6 +157,8 @@ The API service and Swagger will be listening on [`http://localhost:5002`](http:
 You can also change the listening port by changing the configuration in `appsettings.json`.
 
 Read the `View Swagger` section to know how to call the API.
+
+Previous version `1.0.0` already configured to run inside a Docker container. So feel free to checkout the commit on `master` branch tagged with version `1.0.0` to retrieve the Docker version.
   
 3. Run the tests, change directory to `AEBackend.Tests` then run:
 
